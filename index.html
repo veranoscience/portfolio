@@ -952,7 +952,7 @@ footer{
       <!-- FINSIGHT — featured -->
       <div class="project-card featured reveal" onclick="openModal('finsight')">
         <div class="project-cover" style="padding:0;overflow:hidden">
-          <img src="1.png" alt="FinSight" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="1.png?v=2" alt="FinSight" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
         <div class="project-body">
           <div class="project-cats">
@@ -1170,6 +1170,7 @@ const projects = {
     title:'FinSight — Market Intelligence & Prediction Platform',
     image:'finsight.png',
     github:'https://github.com/veranoscience/OC_FinSight_IA',
+    demo:'https://finsight-ia.streamlit.app/',
     context:`FinSight est une solution intelligente pour les investisseurs individuels. L'ambition est de couvrir l'intégralité de la chaîne data science — de la collecte brute jusqu'à un agent conversationnel.`,
     results:[
       'Prédiction de tendance à J+30 (hausse / stable / baisse) sur CAC40, S&P500 et métaux précieux avec modèleXGBoost',
@@ -1247,7 +1248,10 @@ function openModal(id){
     <p class="modal-text">${p.retour}</p>
     <div class="modal-section-title">Stack technique</div>
     <div class="modal-stack">${p.stack.map(s=>`<span class="stack-badge">${s}</span>`).join('')}</div>
-    ${p.github ? `<a href="${p.github}" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-family:var(--mono);font-size:.92rem;color:var(--gold);border:1px solid var(--gold3);padding:.5rem 1rem;border-radius:4px;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">⌥ Voir sur GitHub</a>` : ''}
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;">
+    ${p.demo ? `<a href="${p.demo}" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.92rem;color:var(--bg);background:var(--gold);border:1px solid var(--gold);padding:.5rem 1rem;border-radius:4px;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='var(--gold2)';this.style.borderColor='var(--gold2)'" onmouseout="this.style.background='var(--gold)';this.style.borderColor='var(--gold)'">▶ Voir la démo</a>` : ''}
+    ${p.github ? `<a href="${p.github}" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.92rem;color:var(--gold);border:1px solid var(--gold3);padding:.5rem 1rem;border-radius:4px;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">⌥ Voir sur GitHub</a>` : ''}
+    </div>
   `;
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
