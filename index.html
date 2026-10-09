@@ -542,42 +542,40 @@ footer{border-top:1px solid var(--border);position:relative;z-index:1}
       </div>
     </div>
 
-    <!-- Aperçu dashboard : si le fichier olist-dashboard.png existe, la capture réelle
-         remplace automatiquement l'illustration ci-dessous. -->
+    <!-- Aperçu dashboard : la capture 1.attrition.png remplace automatiquement
+         l'illustration ci-dessous (affichée seulement si l'image est introuvable). -->
     <div class="hero-visual">
       <div class="hero-card" id="heroCard">
         <div class="hero-card-head">
-          <span class="hero-card-title">Aperçu · Dashboard KPI e-commerce</span>
+          <span class="hero-card-title">Aperçu · Dashboard RH attrition</span>
           <span class="pcat">Power BI</span>
         </div>
-        <img class="hero-shot" src="olist-dashboard.png" alt="Dashboard KPI e-commerce Olist réalisé sous Power BI"
+        <img class="hero-shot" src="1.attrition.png" alt="Dashboard RH d'analyse de l'attrition (Atlas Labs) réalisé sous Power BI"
              onload="document.getElementById('heroCard').classList.add('has-shot')" onerror="this.remove()"/>
         <div class="mini-dash" aria-hidden="true">
           <div class="kpis">
-            <div class="kpi"><div class="kpi-num">~99k</div><div class="kpi-label">commandes analysées</div></div>
-            <div class="kpi"><div class="kpi-num">4,1/5</div><div class="kpi-label">note client moyenne</div></div>
-            <div class="kpi"><div class="kpi-num">~12 j</div><div class="kpi-label">délai de livraison moyen</div></div>
+            <div class="kpi"><div class="kpi-num">1 470</div><div class="kpi-label">employés analysés</div></div>
+            <div class="kpi"><div class="kpi-num">237</div><div class="kpi-label">départs</div></div>
+            <div class="kpi"><div class="kpi-num">16,1 %</div><div class="kpi-label">taux d'attrition</div></div>
           </div>
           <div class="mini-chart">
-            <div class="mini-chart-label">Commandes par mois · 2017 → 2018</div>
+            <div class="mini-chart-label">Embauches par an · 2012 → 2022</div>
             <svg viewBox="0 0 300 90" preserveAspectRatio="none">
               <line x1="0" y1="86" x2="300" y2="86" stroke="#CFC7B8" stroke-width="1"/>
               <g fill="#C8A84B">
-                <rect x="4" y="74" width="14" height="12" rx="2"/><rect x="24" y="66" width="14" height="20" rx="2"/>
-                <rect x="44" y="58" width="14" height="28" rx="2"/><rect x="64" y="54" width="14" height="32" rx="2"/>
-                <rect x="84" y="50" width="14" height="36" rx="2"/><rect x="104" y="46" width="14" height="40" rx="2"/>
-                <rect x="124" y="42" width="14" height="44" rx="2"/><rect x="144" y="38" width="14" height="48" rx="2"/>
-                <rect x="164" y="12" width="14" height="74" rx="2" fill="#7A5C14"/><rect x="184" y="28" width="14" height="58" rx="2"/>
-                <rect x="204" y="22" width="14" height="64" rx="2"/><rect x="224" y="24" width="14" height="62" rx="2"/>
-                <rect x="244" y="20" width="14" height="66" rx="2"/><rect x="264" y="22" width="14" height="64" rx="2"/>
-                <rect x="284" y="24" width="12" height="62" rx="2"/>
+                <rect x="4" y="14" width="18" height="72" rx="2"/><rect x="31" y="21" width="18" height="65" rx="2"/>
+                <rect x="58" y="21" width="18" height="65" rx="2"/><rect x="85" y="25" width="18" height="61" rx="2"/>
+                <rect x="112" y="32" width="18" height="54" rx="2"/><rect x="139" y="35" width="18" height="51" rx="2"/>
+                <rect x="166" y="21" width="18" height="65" rx="2"/><rect x="193" y="17" width="18" height="69" rx="2"/>
+                <rect x="220" y="25" width="18" height="61" rx="2"/><rect x="247" y="21" width="18" height="65" rx="2"/>
+                <rect x="274" y="12" width="18" height="74" rx="2" fill="#7A5C14"/>
               </g>
             </svg>
           </div>
         </div>
         <div class="hero-card-foot">
-          <span>Dataset public Olist · ~100k commandes</span>
-          <a href="#projects" onclick="setTimeout(()=>openModal('olist'),500)">Voir le projet →</a>
+          <span>Atlas Labs · 1 470 employés · 16,1 % d'attrition</span>
+          <a href="#projects" onclick="setTimeout(()=>openModal('attrition'),500)">Voir le projet →</a>
         </div>
       </div>
     </div>
@@ -679,21 +677,20 @@ footer{border-top:1px solid var(--border);position:relative;z-index:1}
     <div class="divider reveal"></div>
     <div class="projects-grid">
 
-      <!-- OLIST — featured -->
-      <!-- À faire : ajouter la capture "olist.png" à côté de index.html -->
-      <div class="project-card featured reveal" tabindex="0" role="button" onclick="openModal('olist')" onkeydown="cardKey(event,'olist')">
+      <!-- ATTRITION — featured -->
+      <div class="project-card featured reveal" tabindex="0" role="button" onclick="openModal('attrition')" onkeydown="cardKey(event,'attrition')">
         <div class="project-cover">
           <div class="cover-fallback" aria-hidden="true"><span style="height:35%"></span><span style="height:55%"></span><span style="height:48%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:85%"></span><span style="height:78%"></span><span style="height:92%"></span></div>
-          <img src="olist.png" alt="Dashboard Olist sous Power BI" onerror="this.remove()"/>
+          <img src="1.attrition.png" alt="Dashboard RH Atlas Labs sous Power BI : effectifs et taux d'attrition" onerror="this.remove()"/>
           <span class="cover-badge">DASHBOARD · POWER BI</span>
         </div>
         <div class="project-body">
           <div class="project-cats">
-            <span class="pcat">Power BI</span><span class="pcat">KPI</span><span class="pcat">E-commerce</span><span class="pcat">Data storytelling</span>
+            <span class="pcat">Power BI</span><span class="pcat">KPI</span><span class="pcat">RH</span><span class="pcat">Data storytelling</span>
           </div>
-          <div class="project-title">Olist — Dashboard de pilotage e-commerce</div>
-          <div class="project-desc">Tableau de bord de suivi de l'activité d'une marketplace à partir d'environ 100 000 commandes réelles : ventes, délais de livraison et satisfaction client, pour repérer rapidement ce qui freine la croissance.</div>
-          <div class="project-deliv"><b>Livrable</b> · dashboard interactif Power BI</div>
+          <div class="project-title">Prédiction de l'Attrition des Employés</div>
+          <div class="project-desc">Tableau de bord RH sur 1 470 employés : effectifs, profil démographique, suivi de la performance et taux d'attrition (16,1 %), pour repérer les postes et les situations où le risque de départ est le plus élevé.</div>
+          <div class="project-deliv"><b>Livrable</b> · dashboard interactif Power BI · 4 pages</div>
         </div>
         <div class="project-arrow">↗</div>
       </div>
@@ -930,21 +927,24 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
 // ── PROJECTS DATA
 // Laisser tableau / github / demo vides ('') pour masquer le bouton correspondant.
 const projects = {
-  olist:{
-    cats:['Power BI','KPI','E-commerce'],
-    title:'Olist — Dashboard de pilotage e-commerce',
-    tableau:'', // À faire : lien Tableau Public
+  attrition:{
+    cats:['Power BI','KPI','RH'],
+    title:'Prédiction de l\'Attrition des Employés',
+    image:'4.attrition.png',
+    tableau:'',
     github:'',
     // À vérifier / adapter à ce que montre réellement ton dashboard
-    context:`Olist est une marketplace brésilienne qui a publié environ 100 000 commandes réelles (2016–2018). Objectif : donner à un responsable e-commerce une vue claire de l'activité et identifier ce qui pèse sur la satisfaction client.`,
+    context:`Atlas Labs est une entreprise fictive de 1 470 employés, dont 237 ont quitté l'entreprise (16,1 % d'attrition). Objectif : donner aux RH une vue claire des effectifs et identifier les profils et les situations où le risque de départ est le plus élevé.`,
     results:[
-      'Préparation et jointure des tables commandes, clients, produits, paiements et avis',
-      'Définition des KPI : chiffre d\'affaires, nombre de commandes, panier moyen, délai de livraison, note client',
-      'Dashboard interactif Power BI avec filtres par période, région et catégorie',
-      'Mise en évidence du lien entre retards de livraison et mauvaises notes clients'
+      'Dashboard interactif Power BI en 4 pages : vue d\'ensemble, démographie, suivi de la performance, attrition',
+      'Définition des KPI : effectif total, employés actifs et inactifs, taux d\'attrition',
+      'Attrition la plus forte chez les commerciaux (Sales Representatives) et les recruteurs',
+      'Heures supplémentaires et déplacements fréquents associés à un taux de départ nettement plus élevé',
+      'Risque concentré sur les deux premières années d\'ancienneté',
+      'Fiche individuelle par employé : satisfaction, équilibre vie pro / vie perso et évaluations dans le temps'
     ],
     retour:`Le plus important n'était pas le graphique, mais le choix des indicateurs : peu de KPI, bien définis, que l'on peut lire en quelques secondes.`,
-    stack:['Power BI','SQL','Python','pandas']
+    stack:['Power BI','DAX']
   },
   f1:{
     cats:['Power BI','Python','Storytelling'],
