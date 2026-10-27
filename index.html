@@ -1044,6 +1044,35 @@ function closeModal(){
 function closeModalOnBg(e){ if(e.target===document.getElementById('modalOverlay')) closeModal(); }
 function cardKey(e,id){ if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(id);} }
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal()});
+
+// ── ANALYTICS — GoatCounter (gratuit, sans cookies → pas de bandeau RGPD)
+// Mettre ici le code du compte (ex. 'ksenia' pour https://ksenia.goatcounter.com).
+// Vide = aucun suivi.
+const GOATCOUNTER_CODE='';
+// Lien du CV : https://veranoscience.github.io/portfolio/?ref=cv
+// → la visite apparaît avec "cv" comme source (Referrers) dans GoatCounter.
+// On garde le chemin sans "?ref=…" pour ne pas éclater les stats de la page.
+window.goatcounter={path:location.pathname};
+if(GOATCOUNTER_CODE){
+  const s=document.createElement('script');
+  s.async=true;
+  s.dataset.goatcounter=`https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+  s.src='https://gc.zgo.at/count.js';
+  document.body.appendChild(s);
+}
+function track(name,title){
+  if(window.goatcounter.count) window.goatcounter.count({path:name,title:title||name,event:true});
+}
+// Clics sur les liens externes (LinkedIn, GitHub, démos, Tableau) et l'e-mail,
+// y compris les liens générés dans la modale projet.
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="http"],a[href^="mailto:"]');
+  if(!a) return;
+  track(a.protocol==='mailto:'?'clic-email':'clic-'+a.hostname+a.pathname,a.textContent.trim());
+});
+const _openModal=openModal;
+openModal=id=>{track('projet-'+id);_openModal(id);};
+document.getElementById('contactForm').addEventListener('submit',()=>track('formulaire-contact'));
 </script>
 </body>
 </html>
